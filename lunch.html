@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lunch Recipes</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #eeeeee;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ff5722;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    header nav a {
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
+    .search-container {
+      max-width: 500px;
+      margin: 30px auto;
+    }
+    #searchBar {
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+    .recipe-container {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      padding: 20px;
+    }
+    .recipe-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .recipe-container h3 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #333;
+    }
+    .recipe-container p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .more-btn, .less-btn {
+      background-color: #ff5722;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .more-btn:hover, .less-btn:hover {
+      background-color: black;
+    }
+    .recipe-details h4 {
+      font-size: 1.25rem;
+      color: #ff5722;
+    }
+    .recipe-details ul, .recipe-details ol {
+      margin-left: 20px;
+    }
+    .recipe-details ul li, .recipe-details ol li {
+      font-size: 1rem;
+      color: #555;
+    }
+    footer {
+      background-color: #ff5722;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Popular Lunch Recipes from Around the World</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input type="text" id="searchBar" class="form-control" onkeyup="searchRecipes()" placeholder="Search for recipes...">
+    </div>
+
+    <div id="noResult" class="alert alert-danger" style="display:none;">No result found</div>
+
+    <!-- Recipe Containers -->
+    <div class="row">
+      <!-- Chicken Caesar Salad -->
+      <div class="col-md-6">
+        <div class="recipe-container">
+          <h3>Chicken Caesar Salad</h3>
+          <img src="C:\Users\PARVATHI\OneDrive\Desktop\chicken ceaser.jpeg" alt="Chicken Caesar Salad">
+          <p>A classic Caesar salad with grilled chicken, crisp romaine, and a tangy Caesar dressing.</p>
+          <button class="more-btn" onclick="toggleRecipe('caesarSalad', true)">More</button>
+          <button class="less-btn" onclick="toggleRecipe('caesarSalad', false)" style="display:none;">Less</button>
+          <div class="recipe-details" id="caesarSalad" style="display:none;">
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>2 cups romaine lettuce, chopped</li>
+              <li>1 cup grilled chicken, sliced</li>
+              <li>1/4 cup Caesar dressing</li>
+              <li>1/4 cup Parmesan cheese, grated</li>
+              <li>Croutons</li>
+              <li>Salt and pepper to taste</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>In a large bowl, combine the romaine lettuce, grilled chicken, and Caesar dressing.</li>
+              <li>Toss to coat evenly.</li>
+              <li>Top with Parmesan cheese and croutons.</li>
+              <li>Season with salt and pepper to taste.</li>
+              <li>Serve immediately.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chicken Tikka Masala -->
+      <div class="col-md-6">
+        <div class="recipe-container">
+          <h3>Chicken Tikka Masala</h3>
+          <img src="C:\Users\PARVATHI\OneDrive\Desktop\chicken tikka.jpeg" alt="Chicken Tikka Masala">
+          <p>A rich and creamy Indian dish featuring marinated chicken in a spiced tomato cream sauce.</p>
+          <button class="more-btn" onclick="toggleRecipe('tikkaMasala', true)">More</button>
+          <button class="less-btn" onclick="toggleRecipe('tikkaMasala', false)" style="display:none;">Less</button>
+          <div class="recipe-details" id="tikkaMasala" style="display:none;">
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>500g chicken, cut into pieces</li>
+              <li>1 cup plain yogurt</li>
+              <li>2 tbsp tikka masala spice mix</li>
+              <li>1 onion, chopped</li>
+              <li>2 cloves garlic, minced</li>
+              <li>1 inch ginger, minced</li>
+              <li>1 can (400g) diced tomatoes</li>
+              <li>1/2 cup heavy cream</li>
+              <li>2 tbsp vegetable oil</li>
+              <li>Salt and pepper to taste</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>Marinate the chicken in yogurt and tikka masala spice mix for at least 1 hour.</li>
+              <li>Heat oil in a pan and cook the chicken until browned and cooked through. Remove and set aside.</li>
+              <li>In the same pan, sauté onion, garlic, and ginger until softened.</li>
+              <li>Add diced tomatoes and cook for 5 minutes.</li>
+              <li>Stir in the cream and return the chicken to the pan. Simmer until the sauce thickens.</li>
+              <li>Season with salt and pepper. Serve with rice or naan.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vegetarian Chili -->
+      <div class="col-md-6">
+        <div class="recipe-container">
+          <h3>Vegetarian Chili</h3>
+          <img src="C:\Users\PARVATHI\OneDrive\Desktop\vegetarian chilli.jpeg" alt="Vegetarian Chili">
+          <p>A hearty and spicy chili packed with beans, vegetables, and spices.</p>
+          <button class="more-btn" onclick="toggleRecipe('vegetarianChili', true)">More</button>
+          <button class="less-btn" onclick="toggleRecipe('vegetarianChili', false)" style="display:none;">Less</button>
+          <div class="recipe-details" id="vegetarianChili" style="display:none;">
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>1 tbsp olive oil</li>
+              <li>1 onion, chopped</li>
+              <li>2 cloves garlic, minced</li>
+              <li>1 bell pepper, chopped</li>
+              <li>2 cans (400g each) diced tomatoes</li>
+              <li>1 can (400g) kidney beans, drained and rinsed</li>
+              <li>1 can (400g) black beans, drained and rinsed</li>
+              <li>1 cup corn kernels</li>
+              <li>2 tbsp chili powder</li>
+              <li>1 tsp cumin</li>
+              <li>Salt and pepper to taste</li>
+              <li>Chopped cilantro for garnish</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>Heat olive oil in a large pot. Sauté onion and garlic until softened.</li>
+              <li>Add bell pepper and cook for a few more minutes.</li>
+              <li>Add diced tomatoes, beans, corn, chili powder, and cumin.</li>
+              <li>Bring to a boil, then reduce heat and simmer for 30 minutes.</li>
+              <li>Season with salt and pepper. Garnish with cilantro before serving.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stuffed Bell Peppers -->
+      <div class="col-md-6">
+        <div class="recipe-container">
+          <h3>Stuffed Bell Peppers</h3>
+          <img src="C:\Users\PARVATHI\OneDrive\Desktop\stuffed bell.jpeg" alt="Stuffed Bell Peppers">
+          <p>Bell peppers stuffed with a savory mixture of rice, vegetables, and cheese.</p>
+          <button class="more-btn" onclick="toggleRecipe('stuffedPeppers', true)">More</button>
+          <button class="less-btn" onclick="toggleRecipe('stuffedPeppers', false)" style="display:none;">Less</button>
+          <div class="recipe-details" id="stuffedPeppers" style="display:none;">
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>4 large bell peppers</li>
+              <li>1 cup cooked rice</li>
+              <li>1 cup cooked ground beef or turkey</li>
+              <li>1 can (400g) diced tomatoes</li>
+              <li>1/2 cup shredded cheese</li>
+              <li>1 onion, chopped</li>
+              <li>2 cloves garlic, minced</li>
+              <li>1 tsp dried oregano</li>
+              <li>Salt and pepper to taste</li>
+              <li>1 tbsp olive oil</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>Preheat oven to 375°F (190°C).</li>
+              <li>Cut the tops off the bell peppers and remove the seeds.</li>
+              <li>In a pan, heat olive oil and cook onion and garlic until softened.</li>
+              <li>Add ground beef or turkey, diced tomatoes, and oregano. Cook for 5 minutes.</li>
+              <li>Stir in cooked rice and cheese. Season with salt and pepper.</li>
+              <li>Stuff the bell peppers with the mixture and place in a baking dish.</li>
+              <li>Bake for 30-35 minutes, until peppers are tender.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Veggie Stir-Fry -->
+      <div class="col-md-6">
+        <div class="recipe-container">
+          <h3>Veggie Stir-Fry</h3>
+          <img src="C:\Users\PARVATHI\OneDrive\Desktop\veggie stir fry.jpeg" alt="Veggie Stir-Fry">
+          <p>A quick and colorful stir-fry with a variety of fresh vegetables and a savory sauce.</p>
+          <button class="more-btn" onclick="toggleRecipe('veggieStirFry', true)">More</button>
+          <button class="less-btn" onclick="toggleRecipe('veggieStirFry', false)" style="display:none;">Less</button>
+          <div class="recipe-details" id="veggieStirFry" style="display:none;">
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>2 tbsp vegetable oil</li>
+              <li>1 bell pepper, sliced</li>
+              <li>1 cup broccoli florets</li>
+              <li>1 cup snap peas</li>
+              <li>1 carrot, sliced</li>
+              <li>2 cloves garlic, minced</li>
+              <li>2 tbsp soy sauce</li>
+              <li>1 tbsp hoisin sauce</li>
+              <li>1 tsp cornstarch mixed with 2 tbsp water</li>
+              <li>Cooked rice for serving</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>Heat vegetable oil in a large pan or wok.</li>
+              <li>Add garlic and cook for 30 seconds.</li>
+              <li>Add bell pepper, broccoli, snap peas, and carrot. Stir-fry for 5-7 minutes.</li>
+              <li>Mix in soy sauce and hoisin sauce.</li>
+              <li>Stir in the cornstarch mixture to thicken the sauce.</li>
+              <li>Serve over cooked rice.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Fresh Cook. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+

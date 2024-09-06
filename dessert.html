@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breakfast Recipes</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #eeeeee;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ff5722;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    header nav a {
+      color: #fff;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
+    .search-container {
+      max-width: 500px;
+      margin: 30px auto;
+    }
+    #inpt_search {
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: 2px solid #ced4da;
+    }
+    .recipe-container {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      padding: 20px;
+    }
+    .recipe-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .recipe-container h3 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #333;
+    }
+    .recipe-container p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .more-btn, .less-btn {
+      background-color: #ff5722;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .more-btn:hover, .less-btn:hover {
+      background-color: black;
+      border:#ff5722;
+    }
+    .recipe-details h4 {
+      font-size: 1.25rem;
+      color: #ff5722;
+    }
+    .recipe-details ul, .recipe-details ol {
+      margin-left: 20px;
+    }
+    .recipe-details ul li, .recipe-details ol li {
+      font-size: 1rem;
+      color: #555;
+    }
+    footer {
+      background-color: #ff5722;
+      color: black;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Delicious Breakfast Recipes</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input type="text" id="inpt_search" class="form-control" onkeyup="searchRecipes()" placeholder="Search for recipes...">
+    </div>
+
+    <div id="noResult" class="alert alert-danger" style="display:none;">No result found</div>
+
+    <!-- Pancakes -->
+    <!-- Chocolate Lava Cake -->
+<div class="recipe-container">
+  <h3>Chocolate Lava Cake</h3>
+  <img src="C:\Users\PARVATHI\OneDrive\Desktop\chocolatelava.jpeg" alt="Chocolate Lava Cake">
+  <p>A decadent chocolate cake with a gooey molten center.</p>
+  <button class="more-btn" onclick="toggleRecipe('lavaCake', true)">More</button>
+  <button class="less-btn" onclick="toggleRecipe('lavaCake', false)" style="display:none;">Less</button>
+  <div class="recipe-details" id="lavaCake" style="display:none;">
+    <h4>Ingredients:</h4>
+    <ul>
+      <li>1/2 cup unsalted butter</li>
+      <li>1 cup semisweet chocolate chips</li>
+      <li>1 cup powdered sugar</li>
+      <li>2 large eggs</li>
+      <li>2 large egg yolks</li>
+      <li>1 tsp vanilla extract</li>
+      <li>1/2 cup all-purpose flour</li>
+      <li>Butter and cocoa powder for greasing ramekins</li>
+    </ul>
+    <h4>Instructions:</h4>
+    <ol>
+      <li>Preheat oven to 425°F (220°C). Grease four ramekins with butter and dust with cocoa powder.</li>
+      <li>Melt the butter and chocolate chips together in a heatproof bowl over a pot of simmering water.</li>
+      <li>Stir in the powdered sugar until smooth.</li>
+      <li>Whisk in the eggs and egg yolks until combined, then add vanilla extract.</li>
+      <li>Fold in the flour until just combined.</li>
+      <li>Divide the batter evenly among the ramekins.</li>
+      <li>Bake for 12-14 minutes, until the edges are set but the centers are still soft.</li>
+      <li>Let cool for 1 minute, then invert onto plates. Serve warm with vanilla ice cream.</li>
+    </ol>
+    <a href="https://www.google.com/shopping/product/18040468678977634784?sca_esv=5261f004a4ce4d96&sca_upv=1&q=semisweet+chocolate+chips&fbs=AEQNm0CvspUPonaF8UH5s_LBD3JPX4RSeMPt9v8oIaeGMh2T2D1DyqhnuPxLgMgOaYPYX7OtOF4SxbM4YPsyWUMdeXRPnkQc3caC_NEMjyGZlBqX7YDVSc-lk14rE2h7j-ln6ORWjT4WxqVC6FS82YpEwEqqnkJJKpHqKGrk5ZhbNsOcE3i19GRoFANVfwr_gZS3oWcL17KMyupN4i8_p5OTUvqC1CSN_g&ictx=111&biw=1220&bih=561&dpr=1.58&prds=eto:13131364123748510175_0,pid:18326331891435752647,rsk:PC_11792611137378546742&sa=X&ved=0ahUKEwj67f3Cra6IAxVunq8BHeo6AQAQ8wII9gg">chocolate shrimps</a>
+    <a href="https://www.google.com/url?url=http://www.flipkart.com/organic-bites-ultra-fine-icing-sugar/p/itm6073199ecb51e%3Fpid%3DSUGGYNHAWHZZ25WW%26lid%3DLSTSUGGYNHAWHZZ25WW2JPV9T%26marketplace%3DFLIPKART%26cmpid%3Dcontent_sugar_8965229628_gmc&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwjlrd3Brq6IAxUQsVYBHQnTI7wQ1SkIrAgoAA&usg=AOvVaw3LgVvRwcL-ICs5oKsaoCGS>powdered Sugar>powdered sugar">powdered sugar</a> 
+  </div>
+</div>
+<!-- Cheesecake -->
+<div class="recipe-container">
+  <h3>Cheesecake</h3>
+  <img src="C:\Users\PARVATHI\OneDrive\Desktop\cheesecake.jpeg" alt="Cheesecake">
+  <p>A creamy, smooth cheesecake with a buttery graham cracker crust.</p>
+  <button class="more-btn" onclick="toggleRecipe('cheesecake', true)">More</button>
+  <button class="less-btn" onclick="toggleRecipe('cheesecake', false)" style="display:none;">Less</button>
+  <div class="recipe-details" id="cheesecake" style="display:none;">
+    <h4>Ingredients:</h4>
+    <ul>
+      <li>1 1/2 cups graham cracker crumbs</li>
+      <li>1/4 cup granulated sugar</li>
+      <li>1/2 cup unsalted butter, melted</li>
+      <li>4 (8 oz) packages cream cheese, softened</li>
+      <li>1 cup granulated sugar</li>
+      <li>1 tsp vanilla extract</li>
+      <li>4 large eggs</li>
+      <li>1 cup sour cream</li>
+      <li>1/4 cup all-purpose flour</li>
+    </ul>
+    <h4>Instructions:</h4>
+    <ol>
+      <li>Preheat oven to 325°F (160°C). Mix graham cracker crumbs, sugar, and melted butter in a bowl.</li>
+      <li>Press the mixture into the bottom of a springform pan to form the crust.</li>
+      <li>In a large bowl, beat the cream cheese until smooth.</li>
+      <li>Add sugar and vanilla extract, and mix until combined.</li>
+      <li>Beat in eggs, one at a time, then add sour cream and flour, mixing until smooth.</li>
+      <li>Pour filling over the crust in the springform pan.</li>
+      <li>Bake for 50-60 minutes, until the center is set and the edges are slightly puffed.</li>
+      <li>Cool completely, then refrigerate for at least 4 hours before serving.</li>
+    </ol>
+    <a href="https://www.google.com/url?q=https://www.bigbasket.com/pd/40078457/mooz-sour-cream-150-g/%3Fz%3DMzE0OTkyNTYxNw%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DNoida-Ghaziabad-PLA/&opi=95576897&sa=U&ved=0ahUKEwiwn5z_r66IAxULdfUHHU3FBskQrzwIfw&usg=AOvVaw3LghnAcXAdHMD8N3-LsikY">Sour cream</a>
+  </div>
+</div>
+<!-- Tiramisu -->
+<div class="recipe-container">
+  <h3>Tiramisu</h3>
+  <img src="C:\Users\PARVATHI\OneDrive\Desktop\tiramasu.jpeg" alt="Tiramisu">
+  <p>An Italian classic with layers of coffee-soaked ladyfingers and creamy mascarpone.</p>
+  <button class="more-btn" onclick="toggleRecipe('tiramisu', true)">More</button>
+  <button class="less-btn" onclick="toggleRecipe('tiramisu', false)" style="display:none;">Less</button>
+  <div class="recipe-details" id="tiramisu" style="display:none;">
+    <h4>Ingredients:</h4>
+    <ul>
+      <li>6 large egg yolks</li>
+      <li>3/4 cup granulated sugar</li>
+      <li>1 cup heavy cream</li>
+      <li>1 cup mascarpone cheese</li>
+      <li>1 cup brewed espresso, cooled</li>
+      <li>24 ladyfingers</li>
+      <li>Cocoa powder for dusting</li>
+    </ul>
+    <h4>Instructions:</h4>
+    <ol>
+      <li>In a bowl, whisk egg yolks and sugar until thick and pale.</li>
+      <li>In a separate bowl, whip heavy cream until stiff peaks form, then fold into the egg mixture.</li>
+      <li>Fold in mascarpone cheese until smooth.</li>
+      <li>Dip ladyfingers briefly in espresso and arrange in a single layer in a dish.</li>
+      <li>Spread half of the mascarpone mixture over the ladyfingers.</li>
+      <li>Repeat with another layer of dipped ladyfingers and the remaining mascarpone mixture.</li>
+      <li>Cover and refrigerate for at least 4 hours or overnight.</li>
+      <li>Dust with cocoa powder before serving.</li>
+    </ol>
+    <a href="https://www.google.com/url?url=https://www.bigbasket.com/pd/40229935/colombian-brew-coffee-strong-instant-coffee-powder-high-caffeine-espresso-50-g-box/%3Fz%3DMzE0OTkyNTYxMQ%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DPune-PLA/&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwi0vNecsK6IAxWwZvUHHZ7YO7wQ1SkIpAsoAA&usg=AOvVaw2dEgcWNn7Uwukrcc8gJjbv">Brewed Expresso</a>
+    
+  </div>
+</div>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Fresh Cook. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleRecipe(id, show) {
+      const recipe = document.getElementById(id);
+      const moreBtn = document.querySelector(`.recipe-container #${id} ~ .more-btn`);
+      const lessBtn = document.querySelector(`.recipe-container #${id} ~ .less-btn`);
+
+      if (show) {
+        recipe.style.display = 'block';
+        moreBtn.style.display = 'none';
+        lessBtn.style.display = 'inline';
+      } else {
+        recipe.style.display = 'none';
+        moreBtn.style.display = 'inline';
+        lessBtn.style.display = 'none';
+      }
+    }
+
+    function searchRecipes() {
+      const input = document.getElementById('inpt_search').value.toLowerCase();
+      const containers = document.querySelectorAll('.recipe-container');
+
+      let hasVisible = false;
+
+      containers.forEach(container => {
+        const title = container.querySelector('h3').innerText.toLowerCase();
+        if (title.includes(input)) {
+          container.style.display = '';
+          hasVisible = true;
+        } else {
+          container.style.display = 'none';
+        }
+      });
+
+      document.getElementById('noResult').style.display = hasVisible ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breakfast Recipes</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #eeeeee;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ff5722;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    header nav a {
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
+    .search-container {
+      max-width: 500px;
+      margin: 30px auto;
+    }
+    #searchBar {
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+    .recipe-container {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      padding: 20px;
+    }
+    .recipe-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .recipe-container h3 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #333;
+    }
+    .recipe-container p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .more-btn, .less-btn {
+      background-color: #ff5722;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .more-btn:hover, .less-btn:hover {
+      background-color: black;
+    }
+    .recipe-details h4 {
+      font-size: 1.25rem;
+      color: #ff5722;
+    }
+    .recipe-details ul, .recipe-details ol {
+      margin-left: 20px;
+    }
+    .recipe-details ul li, .recipe-details ol li {
+      font-size: 1rem;
+      color: #555;
+    }
+    footer {
+      background-color: #ff5722;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Delicious Breakfast Recipes</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input type="text" id="searchBar" class="form-control" onkeyup="searchRecipes()" placeholder="Search for recipes...">
+    </div>
+
+    <div id="noResult" class="alert alert-danger" style="display:none;">No result found</div>
+
+    <!-- Pancakes -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="recipe-container">
+          <h3>Pancake</h3>
+          <img src="C:\Users\PARVATHI\OneDrive\Desktop\pancake" alt="Pancakes">
+          <p>Fluffy American-style pancakes served with syrup and butter.</p>
+          <button class="more-btn" onclick="toggleRecipe('pancakes', true)">More</button>
+          <button class="less-btn" onclick="toggleRecipe('pancakes', false)" style="display:none;">Less</button>
+          <div class="recipe-details" id="pancakes" style="display:none;">
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>1 cup flour</li>
+              <li>2 tbsp sugar</li>
+              <li>1 tsp baking powder</li>
+              <li>1/2 tsp baking soda</li>
+              <li>Pinch of salt</li>
+              <li>1 cup buttermilk</li>
+              <li>1 large egg</li>
+              <li>2 tbsp melted butter</li>
+              <li>Maple syrup and butter for serving</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>In a bowl, whisk together flour, sugar, baking powder, baking soda, and salt.</li>
+              <li>In another bowl, whisk together buttermilk, egg, and melted butter.</li>
+              <li>Pour the wet ingredients into the dry ingredients and stir until just combined.</li>
+              <li>Heat a non-stick skillet over medium heat and lightly grease it with butter.</li>
+              <li>Pour 1/4 cup of batter onto the skillet and cook until bubbles form on the surface.</li>
+              <li>Flip and cook for another 1-2 minutes until golden brown.</li>
+              <li>Serve warm with butter and syrup.</li>
+            </ol>
+            <a href="https://www.google.com/shopping/product/14796114875702479667?q=baking+powder&sca_esv=5261f004a4ce4d96&sca_upv=1&biw=1220&bih=561&oq=baking+&gs_lp=Egtwcm9kdWN0cy1jYyIHYmFraW5nICoCCAAyChAAGIAEGEMYigUyChAAGIAEGEMYigUyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEi-HFC2CFiwD3ABeACQAQCYAWegAbYEqgEDNi4xuAEByAEA-AEBmAIHoALeBKgCAJgDCZIHAzUuMqAHoSI&sclient=products-cc&prds=eto:15717984125582871320_0,pid:13303239312798031561&sa=X&ved=0ahUKEwiqop2Dr66IAxXwsFYBHSpFIvwQ8gII7AgoAA">Baking powder</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Croissant -->
+      <div class="col-md-6">
+        <div class="recipe-container">
+          <h3>Croissant</h3>
+          <img src="C:\Users\PARVATHI\OneDrive\Desktop\croissant.jpeg" alt="Croissant">
+          <p>A flaky, buttery pastry, perfect with coffee or tea.</p>
+          <button class="more-btn" onclick="toggleRecipe('croissant', true)">More</button>
+          <button class="less-btn" onclick="toggleRecipe('croissant', false)" style="display:none;">Less</button>
+          <div class="recipe-details" id="croissant" style="display:none;">
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>250g flour</li>
+              <li>150g butter</li>
+              <li>60ml milk</li>
+              <li>1 tbsp sugar</li>
+              <li>Pinch of salt</li>
+              <li>Yeast</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>Mix flour, yeast, sugar, and salt in a bowl.</li>
+              <li>Add milk and knead to form a dough.</li>
+              <li>Roll out dough and fold in butter several times to create layers.</li>
+              <li>Chill dough and cut into triangles.</li>
+              <li>Roll triangles into croissant shapes.</li>
+              <li>Bake until golden brown.</li>
+              <a href="https://www.google.com/url?url=http://www.flipkart.com/puramio-yeast-extract-powder-powder/p/itm5c258dcb44c31%3Fpid%3DBKIGVHY7AYT6UH8Z%26lid%3DLSTBKIGVHY7AYT6UH8ZYXV3F2%26marketplace%3DFLIPKART%26cmpid%3Dcontent_baking-ingredient_8965229628_gmc&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwigm96lr66IAxURh1YBHe4oELcQ1SkI2QgoAA&usg=AOvVaw0JRSpWx8DxMCjuQ5jqDsx9">Yeast</a>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- French Toast -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="recipe-container">
+          <h3>French Toast</h3>
+          <img src="C:\Users\PARVATHI\OneDrive\Desktop\frenchtoast.jpeg" alt="French Toast">
+          <p>Classic French toast with a hint of vanilla and cinnamon, perfect for a weekend breakfast.</p>
+          <button class="more-btn" onclick="toggleRecipe('frenchToast', true)">More</button>
+          <button class="less-btn" onclick="toggleRecipe('frenchToast', false)" style="display:none;">Less</button>
+          <div class="recipe-details" id="frenchToast" style="display:none;">
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>4 slices of bread</li>
+              <li>2 eggs</li>
+              <li>1/2 cup milk</li>
+              <li>1 tsp vanilla extract</li>
+              <li>1/2 tsp ground cinnamon</li>
+              <li>Butter for cooking</li>
+              <li>Maple syrup and powdered sugar for serving</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>In a bowl, whisk together eggs, milk, vanilla extract, and cinnamon.</li>
+              <li>Heat a skillet over medium heat and add a little butter.</li>
+              <li>Dip each bread slice into the egg mixture, coating both sides.</li>
+              <li>Cook each slice in the skillet until golden brown, about 2-3 minutes per side.</li>
+              <li>Serve with maple syrup and a dusting of powdered sugar.</li>
+            </ol>
+            <a href="https://www.google.com/shopping/product/7852395499958311257?q=cinnamon+powder&sca_esv=5261f004a4ce4d96&sca_upv=1&biw=1220&bih=561&oq=cinnam&gs_lp=Egtwcm9kdWN0cy1jYyIGY2lubmFtKgIIADIKEAAYgAQYQxiKBTIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEivG1CgBlj3DnABeACQAQCYAWGgAZkEqgEBNrgBAcgBAPgBAZgCBqACywSoAgCYAwmSBwMzLjOgB44c&sclient=products-cc&prds=eto:10890255777483903081_0,pid:14488626250914704552&sa=X&ved=0ahUKEwjNja66r66IAxVAh1YBHc0xBOEQ8gIIngooAA">cinnamon</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avocado Toast -->
+      <div class="col-md-6">
+        <div class="recipe-container">
+          <h3>Avocado Toast</h3>
+          <img src="C:\Users\PARVATHI\OneDrive\Desktop\avocado toast.jpeg" alt="Avocado Toast">
+          <p>Simple and delicious avocado toast topped with cherry tomatoes and a sprinkle of salt.</p>
+          <button class="more-btn" onclick="toggleRecipe('avocadoToast', true)">More</button>
+          <button class="less-btn" onclick="toggleRecipe('avocadoToast', false)" style="display:none;">Less</button>
+          <div class="recipe-details" id="avocadoToast" style="display:none;">
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>2 slices of bread</li>
+              <li>1 ripe avocado</li>
+              <li>Cherry tomatoes, halved</li>
+              <li>Salt and pepper to taste</li>
+              <li>Red pepper flakes (optional)</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>Toast the bread slices to your desired crispness.</li>
+              <li>Cut the avocado in half, remove the pit, and scoop the flesh into a bowl.</li>
+              <li>Mash the avocado with a fork and season with salt and pepper.</li>
+              <li>Spread the mashed avocado evenly over the toasted bread.</li>
+              <li>Top with cherry tomatoes and a sprinkle of red pepper flakes if desired.</li>
+            </ol>
+            <a href="https://www.google.com/url?url=http://www.flipkart.com/leanbeing-red-chilly-flakes-70-gm-crushed-pepper-pizza-pasta-italian-seasoning/p/itm6ac9034f77f92%3Fpid%3DHASFX95YTNFDGCEY%26lid%3DLSTHASFX95YTNFDGCEY3GFA7G%26marketplace%3DFLIPKART%26cmpid%3Dcontent_herb-seasoning_8965229628_gmc&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwiHiYfZr66IAxVf7DQHHQUQNKEQ1SkIgwkoAA&usg=AOvVaw1MB6j3VZcaCcpk7cOkQh0w">Chilli flakes red</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Smoothie Bowl -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="recipe-container">
+          <h3>Smoothie Bowl</h3>
+          <img src="C:\Users\PARVATHI\OneDrive\Desktop\smoothiebowl.jpeg" alt="Smoothie Bowl">
+          <p>A refreshing smoothie bowl topped with granola, fruit, and seeds for a nutritious breakfast.</p>
+          <button class="more-btn" onclick="toggleRecipe('smoothieBowl', true)">More</button>
+          <button class="less-btn" onclick="toggleRecipe('smoothieBowl', false)" style="display:none;">Less</button>
+          <div class="recipe-details" id="smoothieBowl" style="display:none;">
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>1 banana</li>
+              <li>1/2 cup frozen berries</li>
+              <li>1/2 cup Greek yogurt</li>
+              <li>1/4 cup almond milk</li>
+              <li>Granola and fresh fruit for topping</li>
+              <li>Chia seeds (optional)</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>In a blender, combine the banana, frozen berries, Greek yogurt, and almond milk.</li>
+              <li>Blend until smooth and creamy.</li>
+              <li>Pour the smoothie into a bowl and top with granola, fresh fruit, and chia seeds if desired.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Add more recipes as needed -->
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Fresh Cook. All rights reserved.</p>
+  </footer>
+</body>
+</html>

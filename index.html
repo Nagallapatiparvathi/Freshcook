@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Website</title>
+  
+  <style>
+    body {
+      padding-top: 50px;
+      font-family: Arial, sans-serif;
+      background-color: #eeeeee; /* Background color */
+      margin: 0;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4px solid #ddd;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background-color: #ff5722; /* Primary color */
+      color: #fff;
+      position: relative; /* Allows positioning of logo */
+    }
+    .logo {
+      position: absolute; /* Position logo relative to the header */
+      top: -9px; /* Adjust as needed */
+      left: 20px; /* Adjust as needed */
+      max-width: 200px; /* Adjust size as needed */
+      height: auto;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      padding-top: 20px; /* Ensure text isn't overlapping with logo */
+    }
+    .container {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 0 15px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -15px;
+    }
+    .col-xs-12, .col-sm-6, .col-md-6 {
+      padding: 15px;
+      box-sizing: border-box;
+    }
+    .col-xs-12 {
+      width: 100%;
+    }
+    .col-sm-6, .col-md-6 {
+      width: 50%;
+    }
+    @media (max-width: 768px) {
+      .col-sm-6 {
+        width: 100%;
+      }
+    }
+    .panel {
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .panel:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .panel-heading {
+      padding: 15px;
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: center;
+    }
+    .panel-body {
+      padding: 30px;
+      text-align: center;
+    }
+    .panel-primary {
+      border: 2px solid #393e46; /*arm red border */
+    }
+    .panel-primary .panel-heading {
+      background-color: #393e46; /* Warm red background */
+      color: #fff;
+    }
+    .panel-success {
+      border: 2px solid #393e46; /* Soft orange border */
+    }
+    .panel-success .panel-heading {
+      background-color: #393e46; /* Soft orange background */
+      color: #fff;
+    }
+    .panel-info {
+      border: 2px solid #393e46; /* Cool blue border */
+    }
+    .panel-info .panel-heading {
+      background-color: #393e46; /* Cool blue background */
+      color: #fff;
+    }
+    .panel-warning {
+      border: 2px solid #393e46; /* Light yellow border */
+    }
+    .panel-warning .panel-heading {
+      background-color: #393e46; /* Light yellow background */
+      color: #fff; /* Darker text for readability */
+    }
+    footer {
+      background-color: #ff5722;
+      padding: 15px 0;
+      text-align: center;
+      border-top: 2px solid #ddd;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+    footer p {
+      margin: 0;
+      color: #fff;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary {
+      background-color: #ff5722; 
+      border: 2px solid black;
+    }
+    .btn-primary:hover {
+      background-color: black;
+      border-color: black;
+    }
+    .btn-success {
+      background-color:#ff5722 ; 
+      border: 2px solid black;
+    }
+    .btn-success:hover {
+      background-color: black; 
+      border-color: black;
+    }
+    .btn-info {
+      background-color: #ff5722; 
+      border: 2px solid black;
+    }
+    .btn-info:hover {
+      background-color: black; 
+      border-color: black;
+    }
+    .btn-warning {
+      background-color: #ff5722; 
+      border: 2px solid black;
+    }
+    .btn-warning:hover {
+      background-color: black; 
+      border-color: black;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="C:\Users\PARVATHI\Downloads\logo-removebg-preview.png" alt="Foodie Haven Logo" class="logo">
+    <h1>Fresh Cook</h1>
+    <h5>Enjoy your cooking</h5>
+  </header>
+
+  <main class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="panel panel-primary" onclick="location.href='breakfast.html'">
+          <div class="panel-heading">
+            Breakfast
+          </div>
+          <div class="panel-body">
+            <p>Start your day right with delicious breakfast recipes.</p>
+            <a href="breakfast.html" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="panel panel-success" onclick="location.href='lunch.html'">
+          <div class="panel-heading">
+            Lunch
+          </div>
+          <div class="panel-body">
+            <p>Enjoy hearty and satisfying lunch recipes.</p>
+            <a href="lunch.html" class="btn btn-success">Explore</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="panel panel-info" onclick="location.href='dinner.html'">
+          <div class="panel-heading">
+            Dinner
+          </div>
+          <div class="panel-body">
+            <p>End your day with delightful dinner recipes.</p>
+            <a href="dinner.html" class="btn btn-info">Explore</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="panel panel-warning" onclick="location.href='dessert.html'">
+          <div class="panel-heading">
+            Dessert
+          </div>
+          <div class="panel-body">
+            <p>Indulge in sweet and delicious desserts.</p>
+            <a href="dessert.html" class="btn btn-warning">Explore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Fresh cook. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
